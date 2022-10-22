@@ -1,6 +1,5 @@
 const { NlpManager } = require('node-nlp');
 const manager = new NlpManager({ languages: ['en'] });
-console.log("in index.js");
 // Adds the utterances and intents for the NLP
 manager.addDocument('en', 'goodbye for now', 'greetings.bye');
 manager.addDocument('en', 'bye bye take care', 'greetings.bye');
