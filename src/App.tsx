@@ -1,7 +1,13 @@
 import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
-const axios = import("axios");
+// const axios = import("axios");
+import axios, { AxiosRequestConfig, AxiosResponse } from 'axios';
+
+const options: AxiosRequestConfig = {
+  method: 'GET',
+  url:'/response'
+}
 
 function App() {
   const [message, setMessage] = useState('');
@@ -9,9 +15,16 @@ function App() {
     setMessage(e.target.value);
     console.log(e.target.value);
   }
-
-  const sendMessage = (e: React.MouseEvent<HTMLElement, MouseEvent>) => {
+  
+  const sendMessage = async (e: React.MouseEvent<HTMLElement, MouseEvent>) => {
     e.preventDefault();
+    await axios(options)
+    .then((res: AxiosResponse) => {
+      console.log("res front", res);
+    })
+    .catch((e: any) => {
+      console.log(e.message);
+    })
     console.log("send message clicked");
   }
 
