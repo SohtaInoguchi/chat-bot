@@ -4,9 +4,20 @@ import './App.css';
 // const axios = import("axios");
 import axios, { AxiosRequestConfig, AxiosResponse } from 'axios';
 
+// const options: AxiosRequestConfig = {
+//   method: 'GET',
+//   url:'/response'
+// }
 const options: AxiosRequestConfig = {
-  method: 'GET',
-  url:'/response'
+  method: 'POST',
+  url:'/response',
+  data: {
+    messageResponse: "test!!!!!"
+  }
+}
+
+type Response = {
+  responseMessage: string
 }
 
 function App() {
@@ -18,7 +29,10 @@ function App() {
   
   const sendMessage = async (e: React.MouseEvent<HTMLElement, MouseEvent>) => {
     e.preventDefault();
-    await axios(options)
+    await axios.post<Response>(
+      'http://localhost:5000/response',
+      { responseMessage: 'Test' }
+    )
     .then((res: AxiosResponse) => {
       console.log("res front", res);
     })
