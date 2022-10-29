@@ -11,7 +11,7 @@ const nlpStarter = require("./index");
 console.log("nlpStart???", nlpStarter);
 
 app.post('/response', (req, res) => {
-  console.log("req body!!!", req.body);
+  console.log("req body", req.body);
   console.log("in get response!!!");
   res.send('Hello');
 })
