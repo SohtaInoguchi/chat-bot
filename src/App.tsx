@@ -8,13 +8,6 @@ import axios, { AxiosRequestConfig, AxiosResponse } from 'axios';
 //   method: 'GET',
 //   url:'/response'
 // }
-const options: AxiosRequestConfig = {
-  method: 'POST',
-  url:'/response',
-  data: {
-    messageResponse: "test!!!!!"
-  }
-}
 
 type Response = {
   responseMessage: string
@@ -31,7 +24,7 @@ function App() {
     e.preventDefault();
     await axios.post<Response>(
       'http://localhost:5000/response',
-      { responseMessage: 'Test' }
+      { responseMessage: message }
     )
     .then((res: AxiosResponse) => {
       console.log("res front", res);
