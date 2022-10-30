@@ -27,7 +27,7 @@ function App() {
       { responseMessage: message }
     )
     .then((res: AxiosResponse) => {
-      console.log("res front", res);
+      console.log("res front", res.data.answer);
     })
     .catch((e: any) => {
       console.log(e.message);
