@@ -23,7 +23,7 @@ function App() {
   const sendMessage = async (e: React.MouseEvent<HTMLElement, MouseEvent>) => {
     e.preventDefault();
     await axios.post<Response>(
-      'http://localhost:5000/response',
+      '/response',
       { responseMessage: message }
     )
     .then((res: AxiosResponse) => {
