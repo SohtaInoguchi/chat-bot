@@ -36,8 +36,8 @@ function App() {
   }
 
   return (
-    <div>
-      <label htmlFor='message'>Input message</label>
+    <div id='chat-box'>
+      <label htmlFor='message'>Input feeling</label>
       <input type='text' id='message' name='message' onChange={(e) => handleOnChange(e)}></input>
       <button id='send-button' onClick={sendMessage}>Send</button>
     </div>

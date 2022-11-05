@@ -7,7 +7,23 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+#root {
+  position: relative;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+#chat-box {
+  position: absolute;
+  bottom: 0px;
+  width: min-content;
+  min-width: 500px;
+  margin: 0px auto;
+  border: solid;
+  border-color: red;
+  display: flex;
+  justify-content: center;
 }
